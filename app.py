@@ -20,7 +20,7 @@ def upload():
 
 
 def cal_nutri_score(path):
-    genai.configure(api_key="AIzaSyD9YFFyOY-jbEJ5PfqC5ufTvXfr0QRtBAE")
+    genai.configure(api_key="YOUR_API_KEY")
     model = genai.GenerativeModel('gemini-pro-vision')
     img = PIL.Image.open(path)
     response = model.generate_content([

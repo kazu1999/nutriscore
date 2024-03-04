@@ -1,0 +1,1 @@
+predict nutri score from image
