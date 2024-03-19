@@ -5,7 +5,7 @@ import PIL.Image
 
 app = Flask(__name__)
 
-@app.route('/upload', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def upload():
     # URLでhttp://127.0.0.1:5000/uploadを指定したときはGETリクエストとなるのでこっち
     if request.method == 'GET':
@@ -20,7 +20,7 @@ def upload():
 
 
 def cal_nutri_score(path):
-    genai.configure(api_key="YOUR_API_KEY")
+    genai.configure(api_key="AIzaSyD9YFFyOY-jbEJ5PfqC5ufTvXfr0QRtBAE")
     model = genai.GenerativeModel('gemini-pro-vision')
     img = PIL.Image.open(path)
     response = model.generate_content([
