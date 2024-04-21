@@ -1,4 +1,4 @@
-#!/Users/kazutomatsumoto/play/photo/env/bin/python3
+#!/Users/kazutomatsumoto/workspace/nutriscore/env/bin/python3.12
 # -*- coding: utf-8 -*-
 import re
 import sys

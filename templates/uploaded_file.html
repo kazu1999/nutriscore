@@ -8,5 +8,25 @@
     <h1>nutriscore</h1>
     <h2>{{text}}</h2>
     <img src="{{url_for('static', filename=path)}}" alt="画像", width ="30%">
+
+    <form action="{{next_url_upload}}" method="GET">
+        <input type="submit" value="upload">
+    </form>
+    <form action="{{next_url_view_today}}" method="GET">
+        <input type="submit" value="today result">
+    </form>
+    <form action="{{next_url_view_calories}}" method="GET">
+        <input type="submit" value="calories">
+    </form>
+    <form action="{{next_url_view_fat}}" method="GET">
+        <input type="submit" value="fat">
+    </form>
+    <form action="{{next_url_view_protein}}" method="GET">
+        <input type="submit" value="protein">
+    </form>
+    <form action="{{next_url_view_carbohydrates}}" method="GET">
+        <input type="submit" value="carbohydrates">
+    </form>
+
 </body>
 </html>

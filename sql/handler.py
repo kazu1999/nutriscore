@@ -66,7 +66,6 @@ class db:
 def main():
     db_instance = db()
     db_instance.connect()
-    '''
     
     print('insertId test')
     db_instance.insertId('squid.7171@gmail.com','kazuto7171')
@@ -83,20 +82,14 @@ def main():
 
     print('insertRecord test')
     db_instance.insertRecord('2','3','4','5','1')
-    '''
 
     print('selectRecord test')
     nutri_dict = db_instance.selectRecord(40)
     print(nutri_dict)
-    
 
-
-
-    '''
 
     print('deleteRecord test')
     db_instance.deleteRecord('1')
-    '''
 
     db_instance.close()
 
