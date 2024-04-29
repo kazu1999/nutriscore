@@ -20,6 +20,7 @@ pip install mysql-connector-python
     - ubuntu
         - https://qiita.com/houtarou/items/a44ce783d09201fc28f5
 - sudo mysql -u root
+- create user 'kazuto'@localhost identified by 'kazuto7171';
 - create database nutriscore;
 - use nutriscore;
 - source /...../create_table_id.sql
