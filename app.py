@@ -26,7 +26,8 @@ def register():
 @app.route('/login', methods=['GET'])
 def login():
     if request.method == 'GET':
-        return render_template('login.html')
+        #return render_template('login.html')
+        return render_template('login_bts.html')
 
 @app.route('/upload', methods=['POST'])
 def upload():
@@ -41,35 +42,38 @@ def upload():
         indivi_id = selected[0]
         if password!=db_password:
             return render_template('login_fail.html')
-        next_url_upload='/result/'+str(indivi_id)
+        next_url_upload='/upload/'+str(indivi_id)
+        next_url_result='/result/'+str(indivi_id)
         next_url_view_today = '/view/today/'+str(indivi_id)
         next_url_view_calories = '/view/calories/'+str(indivi_id)
         next_url_view_fat = '/view/fat/'+str(indivi_id)
         next_url_view_protein = '/view/protein/'+str(indivi_id)
         next_url_view_carbohydrates = '/view/carbohydrates/'+str(indivi_id)
-        return render_template('upload.html',next_url_upload=next_url_upload,\
+        return render_template('fileupload_bts.html',next_url_result=next_url_result,\
         next_url_view_today=next_url_view_today, next_url_view_calories=next_url_view_calories, next_url_view_fat=next_url_view_fat,\
-        next_url_view_protein=next_url_view_protein, next_url_view_carbohydrates=next_url_view_carbohydrates)
+        next_url_view_protein=next_url_view_protein, next_url_view_carbohydrates=next_url_view_carbohydrates, next_url_upload=next_url_upload)
 
 
 @app.route('/upload/<int:indivi_id>', methods=['GET'])
 def upload_back(indivi_id):
     if request.method == 'GET':
         next_url_upload='/upload/'+str(indivi_id)
+        next_url_result='/result/'+str(indivi_id)
         next_url_view_today = '/view/today/'+str(indivi_id)
         next_url_view_calories = '/view/calories/'+str(indivi_id)
         next_url_view_fat = '/view/fat/'+str(indivi_id)
         next_url_view_protein = '/view/protein/'+str(indivi_id)
         next_url_view_carbohydrates = '/view/carbohydrates/'+str(indivi_id)
-        return render_template('upload.html',next_url_upload=next_url_upload, \
+        return render_template('fileupload_bts.html',next_url_result=next_url_result, \
         next_url_view_today=next_url_view_today, next_url_view_calories=next_url_view_calories, next_url_view_fat=next_url_view_fat,\
-        next_url_view_protein=next_url_view_protein, next_url_view_carbohydrates=next_url_view_carbohydrates)
+        next_url_view_protein=next_url_view_protein, next_url_view_carbohydrates=next_url_view_carbohydrates, next_url_upload=next_url_upload)
 
 
 
 @app.route('/result/<int:indivi_id>', methods=['POST'])
 def result(indivi_id):
     if request.method == 'POST':
+        print(request.files)
         file = request.files['example']
         file.save(os.path.join('./static/image', file.filename))
         path = os.path.join('./static/image', file.filename)

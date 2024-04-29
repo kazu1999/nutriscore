@@ -7,9 +7,16 @@
 </head>
  
 <body>
-    <div style="height: 50vh; width: 50%;">
+    <div>
         <canvas id="myChart1"></canvas>
     </div>
+    <style>
+        div{
+            text-align: center;
+            height: 50vh; 
+            width: 50%;
+        }
+    </style>
 
     <script>
         const labels = {{ labels | tojson}};

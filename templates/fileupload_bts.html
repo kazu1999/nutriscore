@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>グラフ</title> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" integrity="sha384-0svjQEgBF1iqvnbIl+N74uLENDLJipj:**" crossorigin="anonymous">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Nutrient Score</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{{next_url_upload}}">Upload</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{{next_url_view_today}}">Today</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{{next_url_view_calories}}">Calories</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{{next_url_view_fat}}">Fat</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{{next_url_view_carbohydrates}}">Carbohydrates</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{{next_url_view_protein}}">Protein</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="/register">Register</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+      <div class="card">
+        <h3>Upload Files</h3>
+        <div class="drop_box">
+          <header>
+            <h4>Select File here</h4>
+          </header>
+          <p>Files Supported: </p>
+          <form action="{{next_url_result}}" method="post"enctype="multipart/form-data">
+            <input class="form-control" type="file" id="formFile" name="example">
+            <button type="submit" class="btn btn-primary mt-3">Upload</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+      * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+      }
+
+      .container {
+      height: 100vh;
+      width: 100%;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      background-color: #fcfcfc;
+      }
+
+      .card {
+      border-radius: 10px;
+      box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+      width: 600px;
+      height: 350px;
+      background-color: #ffffff;
+      padding: 10px 30px 40px;
+      }
+
+      .card h3 {
+      font-size: 22px;
+      font-weight: 600;
+      
+      }
+
+      .drop_box {
+      margin: 10px 0;
+      padding: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      border: 3px dotted #a3a3a3;
+      border-radius: 5px;
+      }
+
+      .drop_box h4 {
+      font-size: 16px;
+      font-weight: 400;
+      color: #2e2e2e;
+      }
+
+      .drop_box p {
+      margin-top: 10px;
+      margin-bottom: 20px;
+      font-size: 12px;
+      color: #a3a3a3;
+      }
+
+      .btn {
+      display: block;
+      margin: auto;
+      text-decoration: none;
+      background-color: #005af0;
+      color: #ffffff;
+      padding: 10px 20px;
+      border: none;
+      outline: none;
+      transition: 0.3s;
+      }
+
+      .btn:hover{
+      text-decoration: none;
+      background-color: #ffffff;
+      color: #005af0;
+      padding: 10px 20px;
+      border: none;
+      outline: 1px solid #010101;
+      }
+      .form input {
+      margin: 10px 0;
+      width: 100%;
+      background-color: #e2e2e2;
+      border: none;
+      outline: none;
+      padding: 12px 20px;
+      border-radius: 4px;
+      }
+    </style>
+</body>
+</html>
